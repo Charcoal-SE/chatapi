@@ -2,11 +2,11 @@ from chatapi.core import Client, Room, Message
 # Many of these unit tests are from ChatExchange
 
 
-def test_get_current_user_ids():
+def test_get_current_user_ids() -> None:
     all([isinstance(user_id, int) for user_id in Room(1).get_current_user_ids()])
 
 
-def test_get_message():
+def test_get_message() -> None:
     # test a message
     msg = Client().get_message(68274952)
     assert isinstance(msg, Message)
@@ -20,7 +20,7 @@ def test_get_message():
     assert msg.parent.text_content == "@bot forever in my tests"
 
 
-def test_get_user():
+def test_get_user() -> None:
     # test with the Feeds user
     user = Client().get_user(-2)
     assert user.id == -2

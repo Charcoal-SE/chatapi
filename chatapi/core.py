@@ -87,7 +87,7 @@ class Message:
         self.data: dict = {}  # type: ignore
         self.room = Room(141239)
         self.owner: MessageOwner = MessageOwner()
-        self.parent: MessageOwner = MessageOwner()  # TODO: what should this do?
+        self.parent: Message = Message()  # TODO: what should this do?
         self.content_source: str = ""
         """`content_source` is the Markdown. That matters for thigns like regular expressions,
         where the content can have characters which would be recognized as Markdown and changed.
@@ -96,6 +96,7 @@ class Message:
         self.content: str = ""
         """`content` is what's displayed in chat and includes having been processed from Markdown
         into HTML. ~ Makyen (https://chat.stackexchange.com/transcript/message/54465303)"""
+        self.text_content: str = self.content
         self._client = Client()
 
 
