@@ -6,3 +6,6 @@ check: $(src) $(test)
 	ruff check $(src) $(test)
 	mypy --strict $(src)
 	pytest --quiet $(test)
+
+install: $(src) $(test)
+	pip install -e .

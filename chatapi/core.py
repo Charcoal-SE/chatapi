@@ -1,6 +1,5 @@
 from typing import Literal, Callable, Any
 from types import SimpleNamespace
-from warnings import deprecated
 from requests import Response
 from threading import Thread
 from random import randint
@@ -17,7 +16,6 @@ def send_message(room: int, server: Host, msg: str) -> None:
     console.print(Markdown(msg))
 
 
-@deprecated("Generates an arbitrary placeholder ID")
 def new_id() -> int:
     return randint(1000, 100000)
 
